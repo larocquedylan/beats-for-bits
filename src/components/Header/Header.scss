@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  border: 1px dashed blue;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__title {
+    width: 12rem;
+    height: 2rem;
+
+    &::hover {
+      color: blue;
+    }
+  }
+
+  &__img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__songs-link {
+    font-size: 1.4rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
