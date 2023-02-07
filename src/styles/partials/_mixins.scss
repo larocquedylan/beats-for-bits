@@ -1,0 +1,15 @@
+@use './_variables.scss' as *;
+
+// mixin for tablet viewport
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+// viewport for desktop viewport
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}

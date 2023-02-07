@@ -1,0 +1,34 @@
+@use './_variables.scss' as *;
+
+// border box reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 1px dashed black;
+}
+
+// font size reset
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Avenir';
+  background-color: $primary-white;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+ul {
+  margin: 0;
+}
