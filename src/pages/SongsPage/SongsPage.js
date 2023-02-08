@@ -8,7 +8,8 @@ import red from "../../assets/photos/21.jpeg";
 import me from "../../assets/photos/25.jpeg";
 import sun from "../../assets/photos/11.jpeg";
 import worried from "../../assets/photos/23.jpeg";
-
+import Modal from "react-modal";
+ 
 
 
 function SongsPage(){
@@ -17,7 +18,7 @@ function SongsPage(){
         <main className="song-gallery">
             <section className="songs">
                 <div className="song"> 
-                    <a className="song__link" href="http://localhost:8080/songs/122S1.wav">
+                    <a className="song__link" href="https://legend.lnbits.com/paywall/P6AYQ7iGaFE8AgjRkzfekn">
                         <img className="song__img" src={me} alt="run from fear fun from rear"></img>
                         <h4 className="song__title"> 1.22 S1</h4>
                     </a>
