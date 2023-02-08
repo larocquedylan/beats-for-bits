@@ -32,7 +32,7 @@
   &__img {
     border-radius: 20px 20px 0 0;
     width: 15rem;
-    height: 15rem;
+    min-height: 15rem;
     object-fit: cover;
   }
 
