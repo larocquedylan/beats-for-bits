@@ -4,8 +4,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  border: 1px dashed black;
+  // box-sizing: border-box;
+  // border: 1px dashed black;
 }
 
 // font size reset
@@ -16,7 +16,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: 'Avenir';
+  font-family: 'Roboto', sans-serif;
   background-color: $primary-white;
   margin: 0;
   padding: 0;
