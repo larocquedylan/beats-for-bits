@@ -27,6 +27,12 @@
     background-color: white;
     height: 19rem;
     box-shadow: 2px solid black;
+    // if button
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 15px; // 1.5rem
   }
 
   &__img {

@@ -9,19 +9,32 @@ import me from "../../assets/photos/25.jpeg";
 import sun from "../../assets/photos/11.jpeg";
 import worried from "../../assets/photos/23.jpeg";
 import Modal from "react-modal";
+import { useState } from "react";
+import SongModal from '../../components/SongModal/SongModal'
  
 
 
 function SongsPage(){
+    const [ openModal, setOpenModal] = useState(false);
     return (
         <>
         <main className="song-gallery">
             <section className="songs">
                 <div className="song"> 
-                    <a className="song__link" href="https://legend.lnbits.com/paywall/P6AYQ7iGaFE8AgjRkzfekn">
+                    {/* <a className="song__link" href="https://legend.lnbits.com/paywall/P6AYQ7iGaFE8AgjRkzfekn">
                         <img className="song__img" src={me} alt="run from fear fun from rear"></img>
                         <h4 className="song__title"> 1.22 S1</h4>
-                    </a>
+                    </a> */}
+                    <button 
+                        className="song__link" 
+                        onClick={() => {
+                            setOpenModal(true);
+                        }}
+                    >
+                        <img className="song__img" src={me} alt="run from fear fun from rear"></img>
+                        <h4 className="song__title"> 1.22 S1</h4>
+                    </button>
+                    {openModal && <SongModal closeModal={setOpenModal} /> }
                 </div>
                 <div className="song"> 
                     <a className="song__link" href="http://localhost:8080/songs/1121U1.wav">
