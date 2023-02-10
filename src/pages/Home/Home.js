@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
-// import { isCompositeComponent } from "react-dom/test-utils";
 import TransactionCard from "../../components/TransactionCard/TransactionCard";
 
 function Home(){
@@ -37,28 +36,10 @@ function Home(){
       }
     }
 
-    // get wallet info
-    // const getWalletDetails = async () => {
-    //   const walletEndpoint = "https://legend.lnbits.com/api/v1/wallet";
-    //   try {
-    //     const {data} = await axios.get(walletEndpoint, { 
-    //       headers: {
-    //         'X-api-key': '0dc7444ff5fc446aa53949f96adb7dc1'
-    //       }
-    //     });
-    //     console.log("1");
-    //     setWalletDetails(data);
-    //     setWalletLoaded(true);
-    //   } catch(error){
-    //     console.log(error);
-    //   }
-    // }
     const getWalletDetails = async () => {
       const backend = "http://localhost:8080/wallet";
       try {
         const {data} = await axios.get(backend);
-        console.log(data);
-        console.log("1");
         setWalletDetails(data);
         setWalletLoaded(true);
       } catch(error){
@@ -66,24 +47,6 @@ function Home(){
       }
     }
 
-    // const payload = {"out": false, "amount": 123, "memo": "hesdlo", "expiry": 12, "unit": "hello", "webhook": "localhost", "internal": true}
-
-
-    // const getTransactions = async () => {
-    //   const transactionsEndpoint = 'https://legend.lnbits.com/api/v1/payments';
-    //   const headers = {headers: {
-    //     'X-api-key': '0dc7444ff5fc446aa53949f96adb7dc1', 'Content-Type': 'application/json'
-    //   }};
-    //   try {
-    //     const { data } = await axios
-    //     .post(transactionsEndpoint, headers);
-    //     console.log(data)
-    //     setTx(data);
-    //     setTxLoaded(true);
-    //   } catch(error) {
-    //     console.log(error);
-    //   }
-    // }
     async function getData(url, apikey, content_type) {
       let headers = {};
       if (apikey) {
@@ -107,64 +70,12 @@ function Home(){
       console.log(tx);
       return data;
     }
-
-    async function downloadSong() {
-      const endpoint = "http://localhost:8080/songs/122G2.wav";
-      try {
-        let data = await axios(endpoint);
-        console.log(data);
-        console.log("yes!!!");
-      } catch(error){
-        console.log(error);
-        console.log(2);
-      }
-    }
-
-  
-
-    // const payload = {
-    //   out: false,
-    //   amount: 123,
-    //   memo: 'hesdlo',
-    //   expiry: 12,
-    //   unit: 'hello',
-    //   webhook: 'localhost',
-    //   internal: true
-    // };
-    
-    // const headers = {
-    //   'X-Api-Key': '1',
-    //   'Content-Type': 'application/json'
-    // };
-    
-    // axios
-    //   .post('https://legend.lnbits.com/api/v1/payments', payload, { headers })
-    //   .then(res => {
-    //     console.log(res.data);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
       
     useEffect(() => {
       getBtcPrice();
       getDifficulty();
       getWalletDetails();
-      // getTransactions();
       getLnbitsTransactions();
-      console.log(tx);
-      
-      // axios
-      // .post('https://legend.lnbits.com/api/v1/payments', payload, { headers })
-      // .then(res => {
-      //   console.log(res.data);
-      // })
-      // .catch(error => {
-      //   console.log(error);
-      // });
-
-      
-
     }, []);
     
     if (!dataLoaded && !walletLoaded && !txLoaded) return <div>Loading...</div>;
@@ -183,8 +94,6 @@ function Home(){
     return (
       <>
       <Header />
-      <button onClick={downloadSong} className="button"> Download!</button>
-      <a href="http://localhost:8080/songs/122G2.wav"> downloadsong </a>
         <h1> BTC Price</h1>
         <h1>${btcPrice.data.amount}</h1>
 
