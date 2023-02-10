@@ -13,7 +13,7 @@ function Header(){
                 <h1 className="header__title"> Beats for Bits</h1>
             </Link>
             <div className="header__filler-middle"> </div>
-            <Link to={`/songs`} className="header__songs-link">Songs</Link>
+            <Link to={`/songs`} className="header__songs-link">Music</Link>
             <div className="header__filler-right"> </div>
         </section>
         
