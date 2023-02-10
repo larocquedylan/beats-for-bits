@@ -9,15 +9,44 @@ import me from "../../assets/photos/25.jpeg";
 import sun from "../../assets/photos/11.jpeg";
 import worried from "../../assets/photos/23.jpeg";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SongModal from '../../components/SongModal/SongModal'
+import axios from "axios";
  
 
 
 function SongsPage(){
     const [ openModal, setOpenModal] = useState(false);
+    const [ dataLoaded, setDataLoaded] = useState(false);
+
+    const [songList, setSongList] = useState([]);
+
+    const getSongList = async () => {
+        const url = "http://localhost:8080/songs/";
+
+        try {
+            const {data} = await axios.get(url);
+            setSongList(data);
+            setDataLoaded(true);
+
+        } catch (error) {
+            console.log(error);
+        }   
+    }
+
+    useEffect(() => {
+        getSongList();
+        if (dataLoaded){
+            console.log(songList);
+        }
+    }, [dataLoaded]);
+
+
+
+if (dataLoaded) ? 
     return (
         <>
+        
         <main className="song-gallery">
             <section className="songs">
                 <div className="song"> 
@@ -32,7 +61,7 @@ function SongsPage(){
                         }}
                     >
                         <img className="song__img" src={me} alt="run from fear fun from rear"></img>
-                        <h4 className="song__title"> 1.22 S1</h4>
+                        <h4 className="song__title"> {songList[0].title}</h4>
                     </button>
                     {openModal && <SongModal closeModal={setOpenModal} /> }
                 </div>
