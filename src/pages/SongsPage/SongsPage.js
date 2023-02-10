@@ -42,8 +42,9 @@ function SongsPage(){
     }, [dataLoaded]);
 
 
-
-if (dataLoaded) ? 
+    if (!dataLoaded){
+        return <div> is Loading...</div>;
+    }
     return (
         <>
         
@@ -60,7 +61,8 @@ if (dataLoaded) ?
                             setOpenModal(true);
                         }}
                     >
-                        <img className="song__img" src={me} alt="run from fear fun from rear"></img>
+                        {/* <img className="song__img" src={'http://localhost:8080/images/2.jpeg'} alt="run from fear fun from rear"></img> */}
+                        <img className="song__img" src={songList[0].image} alt="the blues"></img>
                         <h4 className="song__title"> {songList[0].title}</h4>
                     </button>
                     {openModal && <SongModal closeModal={setOpenModal} /> }
