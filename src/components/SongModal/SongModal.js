@@ -15,10 +15,10 @@ function SongModal({closeModal}){
                 
                     <h2> You are being going to a Lightning Network Paywall.</h2>
                     <p> I am using this because I don't think I should need your email, phone number or bank information for you to listen to my offerings.  </p>
-                    <button href="https://www.youtube.com/watch?v=XRxbrfbeThg&ab_channel=KevinRooke"> Why lightning?</button>
-                    <button href='https://legend.lnbits.com/paywall/P6AYQ7iGaFE8AgjRkzfekn'> Continue</button>
+                    <a href="https://www.youtube.com/watch?v=XRxbrfbeThg&ab_channel=KevinRooke"> Why lightning?</a>
+                    <a className='modal__link' href='https://legend.lnbits.com/paywall/P6AYQ7iGaFE8AgjRkzfekn'>Pay Now! </a>
                 </div>
-                <a className='modal__link' href='https://legend.lnbits.com/paywall/P6AYQ7iGaFE8AgjRkzfekn'> </a>
+                
             </article>
         </div>
         </>

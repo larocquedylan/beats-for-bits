@@ -2,3 +2,7 @@
 @use './partials/_variables.scss' as *;
 @use './partials/_mixins.scss' as *;
 @use './partials/_typography.scss';
+
+#root {
+  background-color: navy;
+}
