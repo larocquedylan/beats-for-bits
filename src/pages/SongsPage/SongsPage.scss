@@ -1,9 +1,31 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+// body {
+//   color: black;
+// }
 .song-gallery {
   display: flex;
-  border: 1px dashed blue;
   border-top: none;
-  margin: 0 2rem;
-  padding: 2rem 0;
+
+  // background-color: navy;
+
+  @include desktop {
+    width: auto;
+  }
+}
+
+.gallery-left {
+  width: 25%;
+  border-right: 1px dashed cyan;
+  border-bottom: 1px dashed cyan;
+}
+.gallery-right {
+  width: 25%;
+  border-left: 1px dashed cyan;
+  border-bottom: 1px dashed cyan;
 }
 
 .songs {
@@ -12,12 +34,15 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 5rem;
-  width: 100%;
+  background: linear-gradient(to right, black, rgb(0, 0, 95));
+  width: 125rem;
+  border-bottom: 1px dashed cyan;
+  padding: 2.5rem;
 }
 
 .song {
   border-radius: 20px;
-  box-shadow: 0px 0px 15px -5px blue;
+  box-shadow: 0px 0px 150px 25px blue;
 
   &__link {
     display: flex;
@@ -33,6 +58,11 @@
     outline: none;
     font-family: inherit;
     font-size: 15px; // 1.5rem
+    cursor: pointer;
+
+    @include desktop {
+      height: 23rem;
+    }
   }
 
   &__img {
@@ -40,6 +70,11 @@
     width: 15rem;
     min-height: 15rem;
     object-fit: cover;
+
+    @include desktop {
+      width: 20rem;
+      min-height: 20rem;
+    }
   }
 
   &__title {
