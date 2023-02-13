@@ -1,10 +1,53 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header {
   display: flex;
   flex-direction: row;
-  border: 1px dashed blue;
+  border-bottom: 1px dashed cyan;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 2rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: navy;
+
+  &__left-fill {
+    // border-right: 1px dashed cyan;
+    width: 0.5rem;
+    height: 4rem;
+
+    @include desktop {
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px dashed cyan;
+    border-left: 1px dashed cyan;
+    width: 100%;
+
+    @include tablet {
+      width: 100%;
+      max-width: 113rem;
+      height: 6rem;
+    }
+
+    @include desktop {
+      width: 113rem;
+      height: 6rem;
+    }
+  }
 
   &__title-wrapper {
     display: flex;
@@ -12,42 +55,129 @@
     align-items: center;
   }
 
-  &__title {
-    width: 15rem;
+  &__img {
     height: 2rem;
+    width: 2rem;
+    padding-right: 1rem;
+
+    @include tablet {
+    }
+
+    @include desktop {
+      height: 4rem;
+      width: 4rem;
+      padding: 0 3rem;
+    }
+  }
+
+  &__title {
+    width: 20rem;
+    height: 3rem;
+    color: cyan;
+    font-weight: 300;
 
     &:hover {
       color: blue;
     }
   }
 
-  &__img {
-    height: 2rem;
-    width: 2rem;
-    padding-right: 1rem;
+  &__nav-fill {
+    width: 1rem;
   }
 
-  &__songs-link {
-    font-size: 1.4rem;
+  &__nav-links {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    inset: 0 0 0 30%;
+    color: orange;
+    z-index: 1000;
+
+    @include tablet {
+      height: 6rem;
+      top: 1rem;
+      right: 10rem;
+      width: 50rem;
+      display: flex;
+    }
+
+    @include desktop {
+      inset: 0 0 0 80%;
+      z-index: 0;
+    }
   }
 
-  &__filler-middle {
-    flex-grow: 2;
-    width: 50rem;
+  &__link {
+    color: cyan;
+    width: 6rem;
+    font-size: 1.6rem;
+
+    @include tablet {
+      width: 8rem;
+    }
+    @include desktop {
+      width: 10rem;
+    }
   }
-  &__filler-left {
-    border-left: 1px dashed blue;
+
+  &__right-fill {
     width: 1rem;
     height: 4rem;
-  }
-  &__filler-right {
-    border-right: 1px dashed blue;
-    width: 1rem;
-    height: 4rem;
+
+    @include desktop {
+    }
   }
 }
 
-a {
-  text-decoration: none;
-  color: black;
+.nav-bar {
+  position: fixed;
+  inset: 4rem 70% 0 0;
+  background-color: black;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  border-right: 1px dashed cyan;
+  border-top: 1px dashed cyan;
+  transition: 350ms ease-in;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    background-color: inherit;
+    inset: 0 0 0 100%;
+    height: 4rem;
+    border: none;
+    width: 30rem;
+    transform: translateX(0);
+
+    @include tabDesk {
+      inset: 0 0 0 92%;
+    }
+
+    @include desktop {
+      inset: 0 0 0 85%;
+      width: 35rem;
+    }
+  }
 }
+
+.mobile-nav-toggle {
+  background: url('../../assets/icons/Bitcoin-Icons-0.1.7/svg/filled/menu.svg');
+  position: absolute;
+  width: 3rem;
+  aspect-ratio: 1;
+  z-index: 10001;
+  cursor: pointer;
+  top: 0.5rem;
+  right: 2rem;
+  outline: none;
+  border: none;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+// .mobile-nav-toggle[]
