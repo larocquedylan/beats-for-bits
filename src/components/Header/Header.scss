@@ -20,8 +20,6 @@ a {
   background: navy;
 
   &__left-fill {
-    // border-right: 1px dashed cyan;
-    width: 0.5rem;
     height: 4rem;
 
     @include desktop {
