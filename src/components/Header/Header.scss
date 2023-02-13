@@ -15,6 +15,9 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: sticky;
+  top: 0;
+  background: navy;
 
   &__left-fill {
     // border-right: 1px dashed cyan;
@@ -137,17 +140,26 @@ a {
   padding: 2rem 1rem;
   border-right: 1px dashed cyan;
   border-top: 1px dashed cyan;
+  transition: 350ms ease-in;
 
   @include tablet {
     display: flex;
     flex-direction: row;
     background-color: inherit;
-    inset: 0 0 0 90%;
+    inset: 0 0 0 100%;
     height: 4rem;
     border: none;
     width: 30rem;
-    border: 1px solid orange;
-    // z-index: 1000;
+    transform: translateX(0);
+
+    @include tabDesk {
+      inset: 0 0 0 92%;
+    }
+
+    @include desktop {
+      inset: 0 0 0 85%;
+      width: 35rem;
+    }
   }
 }
 
@@ -167,3 +179,5 @@ a {
     display: none;
   }
 }
+
+// .mobile-nav-toggle[]
