@@ -10,7 +10,6 @@ a {
 
 .header {
   display: flex;
-  flex-direction: row;
   border-bottom: 1px dashed cyan;
   align-items: center;
   justify-content: space-between;
@@ -18,54 +17,45 @@ a {
   position: sticky;
   top: 0;
   background: navy;
-
-  &__left-fill {
-    height: 4rem;
-
-    @include desktop {
-    }
-  }
+  height: 8rem;
 
   &__nav {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-right: 1px dashed cyan;
-    border-left: 1px dashed cyan;
     width: 100%;
 
     @include tablet {
       width: 100%;
       max-width: 113rem;
-      height: 6rem;
     }
 
     @include desktop {
       width: 113rem;
-      height: 6rem;
     }
   }
 
   &__title-wrapper {
     display: flex;
-    flex-direction: row;
     align-items: center;
-  }
-
-  &__img {
-    height: 2rem;
-    width: 2rem;
-    padding-right: 1rem;
+    width: 30rem;
+    padding-left: 5rem;
 
     @include tablet {
+      padding-left: 8rem;
+      width: 40rem;
     }
 
     @include desktop {
-      height: 4rem;
-      width: 4rem;
-      padding: 0 3rem;
+      padding-left: 20rem;
+      width: 40rem;
     }
+  }
+
+  &__img {
+    height: 5rem;
+    width: 5rem;
+    padding-right: 1rem;
   }
 
   &__title {
@@ -79,16 +69,10 @@ a {
     }
   }
 
-  &__nav-fill {
-    width: 1rem;
-  }
-
   &__nav-links {
     display: flex;
-    flex-direction: row;
     position: fixed;
     inset: 0 0 0 100%;
-    color: orange;
     z-index: 1000;
 
     @include tablet {
@@ -118,20 +102,12 @@ a {
       width: 10rem;
     }
   }
-
-  &__right-fill {
-    width: 1rem;
-    height: 4rem;
-
-    @include desktop {
-    }
-  }
 }
 
 .nav-bar {
   position: fixed;
-  inset: 4rem 70% 0 0;
-  background-color: black;
+  inset: 8rem 70% 0 0;
+  background-color: navy;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -145,32 +121,33 @@ a {
     display: flex;
     flex-direction: row;
     background-color: inherit;
-    inset: 0 0 0 100%;
-    height: 4rem;
+    inset: 1rem 0 0 99%;
+    height: 5rem;
     border: none;
-    width: 30rem;
+    width: 35rem;
     transform: translateX(0);
+    color: cyan;
 
     @include tabDesk {
-      inset: 0 0 0 92%;
+      inset: 1rem 0 0 92%;
     }
 
     @include desktop {
-      inset: 0 0 0 85%;
+      inset: 1rem 0 0 86%;
       width: 35rem;
     }
   }
 }
 
-.mobile-nav-toggle {
+.mobile-nav-toggle-btn {
   background: url('../../assets/icons/Bitcoin-Icons-0.1.7/svg/filled/menu.svg');
   position: absolute;
-  width: 3rem;
+  width: 4rem;
   aspect-ratio: 1;
   z-index: 10001;
   cursor: pointer;
-  top: 0.5rem;
-  right: 2rem;
+  top: 2rem;
+  right: 5rem;
   outline: none;
   border: none;
 
@@ -178,5 +155,3 @@ a {
     display: none;
   }
 }
-
-// .mobile-nav-toggle[]
