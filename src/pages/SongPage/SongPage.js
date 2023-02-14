@@ -7,8 +7,9 @@ import shuffle from "../../assets/icons/Bitcoin-Icons-0.1.7/svg/filled/mixed.svg
 
 function SongPage(){
     const [song, setSong] = useState([]);
-
     const { songId } = useParams();
+
+
 
     const getSong = async () => {
         const url = `http://localhost:8080/songs/${songId}`;
@@ -25,6 +26,8 @@ function SongPage(){
         getSong();
     }, [songId]);
 
+
+    // shuffle
     const getNextSongId = () => {
         let randomSongId;
         do {
@@ -56,8 +59,8 @@ function SongPage(){
                 </div>
 
                 <div className="details__row">
-                    <p className="details__price"> 100 Satoshi's ~ $0.03CAD </p>
-                    <a className="details__download" href={song.download}> Download here....</a>
+                    <p className="details__price"> 100 Sats ~ $0.03CAD </p>
+                    <a className="details__download" href={song.download}> Download</a>
                 </div>
                 <div className="details__row">
                     <Link className="next-song__link" to={`/songs/${getNextSongId()}`}>

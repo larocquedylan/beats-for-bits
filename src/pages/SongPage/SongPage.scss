@@ -7,14 +7,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  //   border: 1px solid cyan;
   width: 100%;
   flex-direction: column;
   padding-bottom: 2rem;
 
   @include tablet {
-    width: 75rem;
+    width: 85rem;
     margin: auto;
+    height: 100vw;
   }
 
   @include desktop {
@@ -27,10 +27,11 @@
 
 .img-container {
   display: flex;
-  margin: 5rem;
+  margin: 4rem;
 
   @include tablet {
     margin: 5rem 2rem;
+    border: 1px solid white;
   }
 }
 .song-img {
@@ -38,9 +39,10 @@
   max-width: 30rem;
   aspect-ratio: 1;
   border-radius: 20px;
+  box-shadow: 0 0px 10px cyan;
 
   @include tablet {
-    max-width: 35rem;
+    width: 35rem;
   }
 
   @include desktop {
@@ -54,16 +56,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 5rem 5rem;
-
-  @include tablet {
-    width: 35rem;
-    padding: 0;
-  }
+  padding: 0 4rem 5rem;
+  width: 37.5rem;
+  border: 1px solid white;
 
   @include desktop {
     padding: 3rem;
-    width: 60rem;
+    width: 70rem;
   }
 
   &__row {
@@ -72,6 +71,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding-left: 2rem;
+    border: 1px solid white;
 
     @include desktop {
       margin-top: 0rem;
@@ -87,14 +88,14 @@
   }
 
   &__author {
-    width: 60%;
+    width: 55%;
   }
 
   &__vibe {
   }
 
   &__vibe-content {
-    width: 60%;
+    width: 55%;
   }
 
   &__lyrics {
@@ -104,7 +105,7 @@
 
   &__lyrics-content {
     font-style: italic;
-    width: 60%;
+    width: 55%;
   }
 
   &__price {
@@ -112,6 +113,43 @@
 
   &__download {
     color: orange;
+    font-size: 2rem;
+    width: 55%;
+    border: 2px solid orange;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    padding: 1rem;
+    margin-right: 2rem;
+    text-shadow: 0 0 1em orange;
+    box-shadow: inset 0 0 0.5em 0 orange, 0 0 0.5em 0 orange;
+
+    position: relative;
+
+    @include desktop {
+      margin-right: 0;
+    }
+  }
+
+  &__download::before {
+    content: '';
+    position: absolute;
+    background-color: orange;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 95%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.75em);
+    opacity: 0.8;
+  }
+
+  &__download:hover {
+    background-color: orange;
+    color: navy;
   }
 }
 
