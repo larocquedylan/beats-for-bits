@@ -35,8 +35,9 @@ function SongsPage(){
     }, [dataLoaded]);
 
     const songCard = songList.map((song) => {
-        return <SongCard id={song.id} song={song}/>;
+        return <SongCard key={song.id} song={song}/>;
     })
+
 
 
     if (!dataLoaded){

@@ -87,11 +87,12 @@ a {
     display: flex;
     flex-direction: row;
     position: fixed;
-    inset: 0 0 0 30%;
+    inset: 0 0 0 100%;
     color: orange;
     z-index: 1000;
 
     @include tablet {
+      inset: 0 0 0 30%;
       height: 6rem;
       top: 1rem;
       right: 10rem;

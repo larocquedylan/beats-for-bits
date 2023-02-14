@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import SongsPage from './pages/SongsPage/SongsPage';
 import Header from './components/Header/Header';
 import WalletPage from './pages/WalletPage/WalletPage';
+import SongPage from './pages/SongPage/SongPage';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/songs' element={<SongsPage />} />
+        <Route path="/songs/:songId" element={<SongPage />} />
         <Route path='/wallet' element={<WalletPage />} />
       </Routes>
     </Router>
