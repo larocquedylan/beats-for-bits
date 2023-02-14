@@ -20,8 +20,6 @@ a {
   background: navy;
 
   &__left-fill {
-    // border-right: 1px dashed cyan;
-    width: 0.5rem;
     height: 4rem;
 
     @include desktop {
@@ -89,11 +87,12 @@ a {
     display: flex;
     flex-direction: row;
     position: fixed;
-    inset: 0 0 0 30%;
+    inset: 0 0 0 100%;
     color: orange;
     z-index: 1000;
 
     @include tablet {
+      inset: 0 0 0 30%;
       height: 6rem;
       top: 1rem;
       right: 10rem;

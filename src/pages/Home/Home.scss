@@ -1,3 +1,8 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
 .button {
   height: 5rem;
   width: 5rem;
@@ -9,25 +14,55 @@
 .bio {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   border-top: none;
-  border: 1px dashed blue;
-  margin: 0 5rem;
+  border-left: 1px dashed cyan;
+  border-right: 1px dashed cyan;
+  border-bottom: 1px dashed cyan;
+  margin: 0 0.5rem;
+
+  @include tablet {
+    flex-direction: column;
+    margin: 0 5rem;
+  }
+
+  @include desktop {
+    align-items: flex-start;
+    width: 113rem;
+    margin: auto;
+    padding: 10rem 0;
+    height: 100vw;
+  }
 
   &__picture-section {
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 5rem;
+
+    @include tablet {
+      width: 50%;
+    }
   }
 
   &__details-section {
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: cyan;
+    padding: 2rem 5rem;
+    font-size: 1.9rem;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include desktop {
+      padding-right: 15rem;
+    }
   }
 
   &__picture {
@@ -35,5 +70,14 @@
     height: 10rem;
     object-fit: cover;
     border-radius: 50%;
+
+    @include tablet {
+      width: 15rem;
+      height: 15rem;
+    }
   }
+}
+
+.bio__link {
+  color: orange;
 }

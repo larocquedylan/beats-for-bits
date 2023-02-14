@@ -1,0 +1,45 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0.5rem;
+  border: 1px dashed cyan;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px dashed cyan;
+
+    @include tablet {
+      width: 33.3%;
+      border-right: 1px dashed cyan;
+    }
+  }
+
+  &__tab:nth-of-type(3) {
+    @include tablet {
+      border: none;
+    }
+  }
+
+  &__icon {
+    margin: auto;
+    padding-top: 2rem;
+    width: 5rem;
+  }
+
+  &__title {
+    color: cyan;
+    padding-left: 2rem;
+  }
+}
