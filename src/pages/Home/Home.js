@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import picture from "../../assets/photos/6.jpeg"
-import Resume from "../../components/Resume/Resume";
-import visible from "../../assets/icons/Bitcoin-Icons-0.1.7/svg/filled/visible.svg"
 import "./Home.scss"
 
 function Home(){
@@ -19,36 +17,34 @@ function Home(){
           
         </section>
         <section className="bio__details-section">
-          <p> I'm a developer. I create offerings and try to bring value to the teams and people around me with strategy and curiosity. </p>
-            
-            <p>My aim is focussed on securing property rights for Canada'a First Nations peoples through the use of the Bitcoin Protocol. Which I believe to be the most compelling human rights and decolonial tool we have. </p>
-
-          <p> I believe that unless the rules of physics render something impossible, that all problems have a solution and require  the search for good explanations. </p>
-
-          <p> In the past, I have been a UX Designer with BC Public Service, a Marketing Analyst @ OneFeather, as well as a Research Assistant in the Marketing &amp; Behavioural Science Group at Robert H Lee Graduate School. </p>
-
-          {/* <p> I also make noises with my computer and sell them for Bitcoin over the Lightning Network which you can check out <Link to={`/songs`} className="bio__link">Here <img src={visible} alt="arrow tag"></img></Link> */}
-          <p> I also make noises with my computer and sell them for Bitcoin over the Lightning Network which you can check out <Link to={`/songs`} className="bio__link">Here</Link>
+          <p> 
+            Welcome to <span className="orange">Beats for Bits</span>, an experiment in tinkering with Bitcoin and the Lightning Network. This website is where you can buy my music using satoshis - tiny units of Bitcoin. 
+          </p>
+          <p>
+            During the intial COVID-19 lockdowns, I started making noises with my computer. People and the culture were sick. A lot of my music from the time reflects this and is very personal and not something I had been interested in marketing until now.
+          </p>
+          <p> 
+            This project is my capstone for the BrainStation Software Engineering Bootcamp, built using React/JS for the frontend and an Express/Node.JS server as the backend. The basic idea is to sell my beats for incredibly small amounts of bitcoin. Why Bitcoin, you ask? Well, it's a fascinating and clever engineering solution to very real issues.
+          </p>
+          <p> 
+            If you haven't taken a closer look at it, a good place to start is checking out Alex Gladstein's book <a className="yt-link" href="https://www.amazon.com/Check-Your-Financial-Privilege-Gladstein/dp/B09V2NM9VJ#:~:text=Alex%20Gladstein%20has%20written%20an,has%20brought%20to%20many%20people." target="__blank">Check Your Financial Privilege</a>. I hope if this is your first time interacting with Bitcoin, that a spark of curisoity is born.
+          </p>
+          <p> 
+            To purchase my music, you'll need some Bitcoin. Don't worry, you don't need to buy a whole bitcoin - it's decomposable into 100,000,000 units called satoshis. Most of my songs cost just 100 satoshis.  You can buy bitcoin from all sorts of places, it is worth taking a closer look. If you are in Canada, I recommend <a className="yt-link" target="__blank" href="https://shakepay.com/">ShakePay </a> or <a className="yt-link" target="__blank" href="https://www.newton.co/">Newton </a> as they don't have fees and have ways to earn free satoshis. 
+          </p>
+          <p> 
+            From here, you will need to download a lightning wallet. Checkout <a className="yt-link" target="__blank" href="https://www.youtube.com/c/BTCSessions?app=desktop">BTCSessions </a> on Youtube, he has tons of detailed and simple tutorials. I recomend a <a className="yt-link" href="https://muun.com/" target="__blank">Muun </a> wallet from my personal use. This is a very simple step but incredibly important, <span className="red"> write down your passphrase on some paper cos if you forget this, you lose access to your funds</span>. 
+          </p>
+          <p className="indent">  
+              Sidenote: this is perhaps the most exciting and simualtaneously scariest part of bitcoin - there is no counterparty risk - no one can access your value. Not even if all the governments colluded to create a super computer in order hack the network! This is why Proof of Work is the key. So, ya, don't lose that info.
+          </p>
+          <p> 
+            Sending a transaction with your Lightning wallet is easy and free. Just press send, scan the QR code for the song you want to buy, and you're done. Each one of the song cards a download here link. Click it, scan it, send it, and bang! You get a beat for your bits. 
           </p>
         </section>
-        <section className="notes">
-                <h2> !Note</h2>
-                <p> 
-                    By click on the link, you begin a checkout to purchase the selcted song and will be prompted with a QR code that is enabled to pay with Bitcoin over the Lightning Network. Upon settlement (literally, lightning quick), your download will begin.
-                </p>
-                <p>
-                    I have chosen to use the lightning network because I am developer and tinkerer, it seemed like a fun opporuntity to learn about the technology more intimately and share my hobby. It also allows me to sell this music without collecting your name, email, phone number, bank account info or anything! I also don't need to pay anyone, nor do you. It goes from you wallet to mine! 
-                </p>
-                <p> 
-                    If you are unfamilar with the lightning network, or bitcoin, checkout Muun wallet. It is a very simple setup and takes less than 1 minute. 
-                </p>
-                <p> 
-                    Please reach out on one of my social links if you have any questions about Bitcoin, Lightning, Music, or anything!
-                </p>
-            </section>
+
         </main>
 
-        <Resume />
        
       </>
     )
