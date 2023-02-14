@@ -1,15 +1,11 @@
 import "./SongsPage.scss";
-
-import Modal from "react-modal";
 import { useEffect, useState } from "react";
-// import SongModal from '../../components/SongModal/SongModal'
 import axios from "axios";
 import SongCard from "../../components/SongCard/SongCard";
  
 
 
 function SongsPage(){
-    // const [ openModal, setOpenModal] = useState(false);
     const [ dataLoaded, setDataLoaded] = useState(false);
 
     const [songList, setSongList] = useState([]);
@@ -37,8 +33,6 @@ function SongsPage(){
     const songCard = songList.map((song) => {
         return <SongCard key={song.id} song={song}/>;
     })
-
-
 
     if (!dataLoaded){
         return <div> is Loading...</div>;
