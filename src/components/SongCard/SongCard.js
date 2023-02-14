@@ -5,7 +5,7 @@ function SongCard({song, closeModal}){
     
     return (
         <div className="song"> 
-        <Link to={`/songs/${song.id}`} element={<SongPage />} >
+        <Link className="song__link" to={`/songs/${song.id}`} element={<SongPage />} >
             <img className="song__img" src={song.image} alt={song.alt}></img>
             <h4 className="song__title"> {song.title}</h4>
         </Link>

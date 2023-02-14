@@ -3,14 +3,9 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
 
-// body {
-//   color: black;
-// }
 .song-gallery {
   display: flex;
   border-top: none;
-
-  // background-color: navy;
 
   @include desktop {
     width: auto;
@@ -19,13 +14,9 @@
 
 .gallery-left {
   width: 25%;
-  border-right: 1px dashed cyan;
-  border-bottom: 1px dashed cyan;
 }
 .gallery-right {
   width: 25%;
-  border-left: 1px dashed cyan;
-  border-bottom: 1px dashed cyan;
 }
 
 .songs {
@@ -34,15 +25,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 5rem;
-  background: linear-gradient(to right, black, rgb(0, 0, 95));
-  width: 125rem;
+  width: 130rem;
   border-bottom: 1px dashed cyan;
-  padding: 2.5rem;
+  padding: 5rem;
 }
 
 .song {
   border-radius: 20px;
-  box-shadow: 0px 0px 150px 25px blue;
+  box-shadow: 0px 0px 10px cyan;
 
   &__link {
     display: flex;
@@ -59,21 +49,31 @@
     font-family: inherit;
     font-size: 15px; // 1.5rem
     cursor: pointer;
+    height: 24rem;
+
+    @include tablet {
+      height: 27.5rem;
+    }
 
     @include desktop {
-      height: 23rem;
+      height: 27.5rem;
     }
   }
 
   &__img {
     border-radius: 20px 20px 0 0;
-    width: 15rem;
-    min-height: 15rem;
+    width: 20rem;
+    min-height: 20rem;
     object-fit: cover;
 
+    @include tablet {
+      width: 23rem;
+      min-height: 23rem;
+    }
+
     @include desktop {
-      width: 20rem;
-      min-height: 20rem;
+      width: 23rem;
+      min-height: 23rem;
     }
   }
 
