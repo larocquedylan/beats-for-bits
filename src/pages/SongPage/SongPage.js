@@ -76,10 +76,10 @@ function SongPage(){
 
                 <div className="details__row">
                     <p className="details__price"> 100 Sats ~ $0.03CAD </p>
-                    <a className="details__download" href={song.download}> Download</a>
+                    <a className="details__download" href={song.download} target="_blank" rel="noopener noreferrer"> Download</a>
                 </div>
                 <div className="details__row">
-                    <Link className="next-song__link" to={`/songs/${getNextSongId()}`} target="_blank">
+                    <Link className="next-song__link" to={`/songs/${getNextSongId()}`}>
                         <span>Shuffle</span> 
                         <img className="next-song__icon" src={shuffle} alt="two arrows crossing over eachother mixed"></img>
                     </Link>
