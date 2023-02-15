@@ -7,9 +7,17 @@ import shuffle from "../../assets/icons/Bitcoin-Icons-0.1.7/svg/filled/mixed.svg
 
 function SongPage(){
     const [song, setSong] = useState([]);
+    const [lyrics, setLyrics] = useState("");
     const { songId } = useParams();
 
+    // show more
+    const [rowHeight, setRowHeight] = useState("8rem")
+    const [ showMoreText, setShowMoreText] = useState(false);
 
+    const toggleShowMoreText = () => {
+        setShowMoreText(prevState => !prevState);
+        setRowHeight(prevState => !prevState);
+    }
 
     const getSong = async () => {
         const url = `http://localhost:8080/songs/${songId}`;
@@ -17,6 +25,7 @@ function SongPage(){
         try {
             const {data} = await axios.get(url);
             setSong(data);
+            setLyrics(data.lyrics);
         } catch (error) {
             console.log(error);
         }   
@@ -53,9 +62,16 @@ function SongPage(){
                     <h4 className="details__vibe-content"> {song.vibes}</h4>
                 </div>
 
-                <div className="details__row">
+                <div className="details__row" style={{height: showMoreText ? "auto" : "8rem"}}>
                     <p className="details__lyrics"> Words?</p>
-                    <p className="details__lyrics-content"> {song.lyrics}</p>
+                    <p className="details__lyrics-content" style={{
+                         overflow: showMoreText ? "visible" : "hidden",
+                         height: showMoreText ? "auto" : "8rem"
+                         }}
+                         > {showMoreText ? lyrics : lyrics.substring(0, 75)}
+
+                         {lyrics.length > 30 ? <button className="details__button" onClick={toggleShowMoreText}> {showMoreText ? "Show Less" : "Show More"}</button> : "" }
+                    </p>
                 </div>
 
                 <div className="details__row">
@@ -63,7 +79,7 @@ function SongPage(){
                     <a className="details__download" href={song.download}> Download</a>
                 </div>
                 <div className="details__row">
-                    <Link className="next-song__link" to={`/songs/${getNextSongId()}`}>
+                    <Link className="next-song__link" to={`/songs/${getNextSongId()}`} target="_blank">
                         <span>Shuffle</span> 
                         <img className="next-song__icon" src={shuffle} alt="two arrows crossing over eachother mixed"></img>
                     </Link>
