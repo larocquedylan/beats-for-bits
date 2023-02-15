@@ -1,0 +1,71 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.resources {
+  color: cyan;
+  display: flex;
+  flex-direction: column;
+  padding: 0 7rem;
+
+  @include tablet {
+    padding: 0 10rem;
+  }
+
+  @include desktop {
+    padding: 0 22rem;
+  }
+
+  &__title {
+    padding: 5rem;
+    margin: auto;
+  }
+
+  &__video-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    width: 95%;
+    padding: 5rem 0;
+    font-size: 1.8rem;
+  }
+
+  &__video {
+    padding: 2rem 0;
+    margin: auto;
+  }
+
+  &__books {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__book-gallery {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5rem 0;
+  }
+
+  &__book {
+    width: 20rem;
+  }
+
+  &__img {
+    width: 10rem;
+
+    @include tablet {
+      width: 15rem;
+      height: 21rem;
+      object-fit: cover;
+    }
+  }
+}
+
+.links {
+  width: 10rem;
+}

@@ -2,8 +2,6 @@ import "./SongsPage.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SongCard from "../../components/SongCard/SongCard";
- 
-
 
 function SongsPage(){
     const [ dataLoaded, setDataLoaded] = useState(false);

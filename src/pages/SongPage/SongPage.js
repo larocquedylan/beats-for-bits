@@ -68,7 +68,7 @@ function SongPage(){
                          overflow: showMoreText ? "visible" : "hidden",
                          height: showMoreText ? "auto" : "8rem"
                          }}
-                         > {showMoreText ? lyrics : lyrics.substring(0, 75)}
+                         > {showMoreText ? lyrics : lyrics.substring(0, 85)}
 
                          {lyrics.length > 30 ? <button className="details__button" onClick={toggleShowMoreText}> {showMoreText ? "Show Less" : "Show More"}</button> : "" }
                     </p>
@@ -79,7 +79,7 @@ function SongPage(){
                     <a className="details__download" href={song.download} target="_blank" rel="noopener noreferrer"> Download</a>
                 </div>
                 <div className="details__row">
-                    <Link className="next-song__link" to={`/songs/${getNextSongId()}`}>
+                    <Link className="next-song__link" to={`/songs/${getNextSongId()}`} >
                         <span>Shuffle</span> 
                         <img className="next-song__icon" src={shuffle} alt="two arrows crossing over eachother mixed"></img>
                     </Link>
