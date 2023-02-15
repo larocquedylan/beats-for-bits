@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import picture from "../../assets/photos/6.jpeg"
 import "./Home.scss"
+import git from "../../assets/icons/github/iconmonstr-github-1.svg"
+import picture from "../../assets/photos/6.jpeg"
 
 function Home(){
     
@@ -10,9 +10,7 @@ function Home(){
         <section className="bio__picture-section">
           <img className="bio__picture" src={picture} alt="ubermensch"></img>
           <div className="bio__links">
-            <a href="https://www.linkedin.com/in/dylan-larocque-/">Link</a>
-            <a href="https://github.com/larocquedylan">Git</a>
-            <a href="https://www.twitch.tv/dylphur">twitch</a>
+            <a href="https://github.com/larocquedylan" target="_blank" rel="noopener noreferrer"><img className="git-icon" src={git} alt="github icon"/></a>
           </div>
           
         </section>
@@ -44,7 +42,6 @@ function Home(){
         </section>
 
         </main>
-
        
       </>
     )

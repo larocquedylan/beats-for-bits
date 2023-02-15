@@ -35,7 +35,7 @@
   }
 }
 .song-img {
-  min-width: 10rem;
+  min-width: 30rem;
   max-width: 30rem;
   aspect-ratio: 1;
   border-radius: 20px;
@@ -124,6 +124,7 @@
     color: orange;
     font-weight: 600;
     padding-bottom: 0;
+    cursor: pointer;
   }
 
   &__download {
@@ -140,6 +141,7 @@
     margin-right: 2rem;
     text-shadow: 0 0 1em orange;
     box-shadow: inset 0 0 0.5em 0 orange, 0 0 0.5em 0 orange;
+    cursor: pointer;
 
     position: relative;
 

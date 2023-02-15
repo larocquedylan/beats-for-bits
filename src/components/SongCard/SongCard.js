@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SongPage from "../../pages/SongPage/SongPage";
 
-function SongCard({song, closeModal}){
+function SongCard({song}){
     
     return (
         <div className="song"> 
