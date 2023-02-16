@@ -1,0 +1,83 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.song-gallery {
+  display: flex;
+  border-top: none;
+
+  @include desktop {
+    width: auto;
+  }
+}
+
+.gallery-left {
+  width: 25%;
+}
+.gallery-right {
+  width: 25%;
+}
+
+.songs {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5rem;
+  width: 130rem;
+  border-bottom: 1px dashed cyan;
+  padding: 5rem;
+}
+
+.song {
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px cyan;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white;
+    height: 19rem;
+    box-shadow: 2px solid black;
+    // if button
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 15px; // 1.5rem
+    cursor: pointer;
+    height: 24rem;
+
+    @include tablet {
+      height: 27.5rem;
+    }
+
+    @include desktop {
+      height: 27.5rem;
+    }
+  }
+
+  &__img {
+    border-radius: 20px 20px 0 0;
+    width: 20rem;
+    min-height: 20rem;
+    object-fit: cover;
+
+    @include tablet {
+      width: 23rem;
+      min-height: 23rem;
+    }
+
+    @include desktop {
+      width: 23rem;
+      min-height: 23rem;
+    }
+  }
+
+  &__title {
+    margin-top: 1rem;
+  }
+}

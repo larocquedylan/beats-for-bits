@@ -1,0 +1,157 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px dashed cyan;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: navy;
+  height: 8rem;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @include tablet {
+      width: 100%;
+      max-width: 113rem;
+    }
+
+    @include desktop {
+      width: 113rem;
+    }
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    width: 30rem;
+    padding-left: 5rem;
+
+    @include tablet {
+      padding-left: 8rem;
+      width: 40rem;
+    }
+
+    @include desktop {
+      padding-left: 20rem;
+      width: 40rem;
+    }
+  }
+
+  &__img {
+    height: 5rem;
+    width: 5rem;
+    padding-right: 1rem;
+  }
+
+  &__title {
+    width: 20rem;
+    height: 3rem;
+    color: cyan;
+    font-weight: 300;
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  &__nav-links {
+    display: flex;
+    position: fixed;
+    inset: 0 0 0 100%;
+    z-index: 1000;
+
+    @include tablet {
+      inset: 0 0 0 30%;
+      height: 6rem;
+      top: 1rem;
+      right: 10rem;
+      width: 50rem;
+      display: flex;
+    }
+
+    @include desktop {
+      inset: 0 0 0 80%;
+      z-index: 0;
+    }
+  }
+
+  &__link {
+    color: cyan;
+    width: 6rem;
+    font-size: 1.6rem;
+
+    @include tablet {
+      width: 8rem;
+    }
+    @include desktop {
+      width: 10rem;
+    }
+  }
+}
+
+.nav-bar {
+  position: fixed;
+  inset: 8rem 70% 0 0;
+  background-color: navy;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  border-right: 1px dashed cyan;
+  border-top: 1px dashed cyan;
+  transition: 350ms ease-in;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    background-color: inherit;
+    inset: 1rem 0 0 99%;
+    height: 5rem;
+    border: none;
+    width: 35rem;
+    transform: translateX(0);
+    color: cyan;
+
+    @include tabDesk {
+      inset: 1rem 0 0 92%;
+    }
+
+    @include desktop {
+      inset: 1rem 0 0 86%;
+      width: 35rem;
+    }
+  }
+}
+
+.mobile-nav-toggle-btn {
+  background: url('../../assets/icons/Bitcoin-Icons-0.1.7/svg/filled/menu.svg');
+  position: absolute;
+  width: 4rem;
+  aspect-ratio: 1;
+  z-index: 10001;
+  cursor: pointer;
+  top: 2rem;
+  right: 5rem;
+  outline: none;
+  border: none;
+
+  @include tablet {
+    display: none;
+  }
+}

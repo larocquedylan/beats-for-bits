@@ -1,0 +1,195 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 2rem;
+
+  @include tablet {
+    padding-top: 5rem;
+    width: 85rem;
+    margin: auto;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    width: 113rem;
+    padding-top: 5rem;
+    align-items: flex-start;
+    height: 100vw;
+  }
+}
+
+.img-container {
+  display: flex;
+  margin: 4rem;
+
+  @include tablet {
+    margin: 5rem 2rem;
+  }
+}
+.song-img {
+  min-width: 30rem;
+  max-width: 30rem;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  box-shadow: 0 0px 10px cyan;
+
+  @include tablet {
+    width: 35rem;
+  }
+
+  @include desktop {
+    width: 35rem;
+    height: 32rem;
+  }
+}
+
+.details {
+  color: cyan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 37.5rem;
+
+  @include desktop {
+    width: 70rem;
+    margin-top: 5rem;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 2rem;
+
+    height: 7rem;
+
+    @include desktop {
+      margin-top: 0rem;
+    }
+  }
+
+  &__row:nth-of-type(1) {
+    height: 4rem;
+  }
+  &__row:nth-of-type(4) {
+    padding-top: 2rem;
+    height: 6rem;
+  }
+  &__row:nth-of-type(5) {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &__author {
+    width: 55%;
+  }
+
+  &__vibe-content {
+    width: 55%;
+  }
+
+  &__lyrics {
+    display: flex;
+    align-self: flex-start;
+  }
+
+  &__lyrics-content {
+    font-style: italic;
+    width: 55%;
+    height: 7rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  &__button {
+    padding-top: 0.5rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: orange;
+    font-weight: 600;
+    padding-bottom: 0;
+    cursor: pointer;
+  }
+
+  &__download {
+    color: orange;
+    font-size: 2rem;
+    width: 55%;
+    border: 2px solid orange;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    padding: 1rem;
+    margin-right: 2rem;
+    text-shadow: 0 0 1em orange;
+    box-shadow: inset 0 0 0.5em 0 orange, 0 0 0.5em 0 orange;
+    cursor: pointer;
+
+    position: relative;
+
+    @include desktop {
+      margin-right: 0;
+    }
+  }
+
+  &__download::before {
+    content: '';
+    position: absolute;
+    background-color: orange;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 95%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.75em);
+    opacity: 0.8;
+  }
+
+  &__download:hover {
+    background-color: orange;
+    color: navy;
+  }
+}
+
+.next-song {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+
+  &__link {
+    width: 100%;
+    height: 5rem;
+    background-color: cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    padding-left: 1rem;
+  }
+}

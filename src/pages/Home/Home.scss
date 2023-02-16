@@ -1,7 +1,75 @@
-.button {
-  height: 5rem;
-  width: 5rem;
-  border-radius: 20px;
-  background-color: orange;
-  color: black;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.bio {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-top: none;
+  margin: 0 0.5rem;
+
+  @include tablet {
+    flex-direction: column;
+    margin: 0 5rem;
+  }
+
+  @include desktop {
+    width: 113rem;
+    margin: auto;
+  }
+
+  &__links {
+    padding-top: 2rem;
+  }
+
+  &__picture-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 5rem;
+  }
+
+  &__details-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: cyan;
+    padding: 2rem 5rem;
+    font-size: 1.9rem;
+
+    @include tablet {
+      width: 80%;
+    }
+  }
+
+  &__picture {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include tablet {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+}
+p {
+  font-weight: 400;
+}
+
+.red {
+  color: red;
+}
+.indent {
+  font-style: italic;
+  padding: 0 3rem;
+}
+.yt-link {
+  color: orange;
 }

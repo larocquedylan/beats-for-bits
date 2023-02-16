@@ -7,9 +7,28 @@
   }
 }
 
+@mixin tabDesk {
+  @media screen and (min-width: 1100px) {
+    @content;
+  }
+}
+
 // viewport for desktop viewport
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
   }
+}
+
+// reset list
+@mixin reset-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+// reset anchor tags
+@mixin reset-anchor {
+  text-decoration: none;
+  color: $primary-background-color;
 }

@@ -1,9 +1,10 @@
+@use './_typography.scss';
+
 // breakpoints
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
-// font-family
-// $font-stack: url(../../assets/Font/);
+$font-stack: 'Roboto';
 
 // colors
 $primary-black: #323232;
