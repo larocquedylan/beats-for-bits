@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import SongPage from './pages/SongPage/SongPage';
 import Footer from './components/Footer/Footer';
 import BtcResrouces from './pages/BtcResources/BtcResources';
+import Contact from './pages/Contact/Contact';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/songs' element={<SongsPage />} />
         <Route path="/songs/:songId" element={<SongPage />} />
         <Route path='/resources' element={<BtcResrouces />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </Router>
     <Footer />
