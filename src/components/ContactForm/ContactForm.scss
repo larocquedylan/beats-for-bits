@@ -3,11 +3,75 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
 
-.form {
+.form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background-color: white;
+  padding: 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  border-radius: 10px;
+  background-color: cyan;
+  color: blue;
+  padding: 2rem;
+
+  @include tablet {
+    width: 50%;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+  &__group {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    // align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    display: block;
+    padding-bottom: 1rem;
+  }
+
+  &__input {
+    display: block;
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: cyan;
+    outline: none;
+
+    &:focus {
+      border: 2px solid orange;
+    }
+  }
+
+  &__submit {
+    display: block;
+    text-align: center;
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: cyan;
+    outline: none;
+    margin-top: 2rem;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      background-color: orange;
+    }
+  }
 }
