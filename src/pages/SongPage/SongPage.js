@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./SongPage.scss"
 import shuffle from "../../assets/icons/Bitcoin-Icons-0.1.7/svg/filled/mixed.svg"
+import Audio from "../../components/Audio/Audio";
 
 
 function SongPage(){
@@ -45,6 +46,8 @@ function SongPage(){
         return randomSongId;
       };
 
+      // audio player
+
 
     return (
         <>
@@ -85,9 +88,10 @@ function SongPage(){
                     </Link>
                 </div>
             </section>
-        
+            <Audio song={song}/>
         </section>
      
+   
         </>
     );
 };

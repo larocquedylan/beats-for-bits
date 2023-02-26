@@ -27,8 +27,8 @@ function Header(){
                 <nav className="header__nav-links"> 
                     <ul className="nav-bar" style={{ transform: isOpen ? 'translateX(0%)' : 'translate(-100%)' }}> 
                         <Link to={`/songs`} className="header__link">Music</Link>
-                        <Link to={`/wallet`} className="header__link">Wallet</Link>
                         <Link to={`/resources`} className="header__link">Resources</Link>
+                        <Link to={`/contact`} className="header__link">Wallet</Link>
                     </ul>
                 </nav>
             </div>

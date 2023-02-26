@@ -3,7 +3,7 @@ import "./Footer.scss"
 function Footer(){
     return (
         <>
-        <footer className="footer"> <p>&copy; 2023 Beats for Bits. All rights reserved.</p> </footer>
+        <footer className="footer"> <p>&copy; 2023 Beats for Bits.</p> </footer>
         </>
     );
 };
