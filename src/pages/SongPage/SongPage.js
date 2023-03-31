@@ -44,8 +44,6 @@ function SongPage() {
     return randomSongId;
   };
 
-  // audio player
-
   return (
     <>
       <section className='container'>
